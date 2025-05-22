@@ -57,7 +57,7 @@ export interface WSAPIRequest<
   header: {
     'X-BAPI-TIMESTAMP': string;
     'X-BAPI-RECV-WINDOW': string;
-    Referer: typeof APIID;
+    Referer: typeof APIID | string;
   };
   args: [TRequestParams];
 }

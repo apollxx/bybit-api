@@ -98,6 +98,12 @@ export interface WSClientConfigurableOptions {
   demoTrading?: boolean;
 
   /**
+   * Your Bybit broker ID. If provided, will be included as a "Referer" header in API requests.
+   * This is used to track orders coming from your broker account.
+   */
+  brokerId?: string;
+
+  /**
    * The API group this client should connect to. The V5 market is currently used by default.
    *
    * Only the "V5" "market" is supported here.

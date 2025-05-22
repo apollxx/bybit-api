@@ -20,6 +20,12 @@ export interface RestClientOptions {
   recv_window?: number;
 
   /**
+   * Your Bybit broker ID. If provided, will be included as a "Referer" header in API requests.
+   * This is used to track orders coming from your broker account.
+   */
+  brokerId?: string;
+
+  /**
    * Disabled by default.
    * This can help on machines with consistent latency problems.
    *

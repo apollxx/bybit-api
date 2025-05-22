@@ -366,7 +366,7 @@ export class WebsocketClient extends BaseWebsocketClient<
     TWSOperation extends WsAPIWsKeyTopicMap[TWSKey],
     TWSParams extends Exact<WsAPITopicRequestParamMap[TWSOperation]>,
     TWSAPIResponse extends
-      WsAPIOperationResponseMap[TWSOperation] = WsAPIOperationResponseMap[TWSOperation],
+    WsAPIOperationResponseMap[TWSOperation] = WsAPIOperationResponseMap[TWSOperation],
   >(
     wsKey: WsKey = WS_KEY_MAP.v5PrivateTrade,
     operation: TWSOperation,
@@ -386,7 +386,7 @@ export class WebsocketClient extends BaseWebsocketClient<
       header: {
         'X-BAPI-RECV-WINDOW': `${this.options.recvWindow}`,
         'X-BAPI-TIMESTAMP': `${timestampMs}`,
-        Referer: APIID,
+        Referer: this.options.brokerId || APIID,
       },
       op: operation,
       args: [params],
